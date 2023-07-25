@@ -1,0 +1,22 @@
+{
+  "name": "yarn-v3-template",
+  "scripts": {
+    "build": "rm -rf dist && node ./bin/build.mjs",
+    "ts": "node -r esbuild-register"
+  },
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^20.4.4",
+    "console-log-colors": "^0.4.0",
+    "esbuild": "^0.18.16",
+    "esbuild-register": "^3.4.2",
+    "log-symbols": "^5.1.0",
+    "pretty-bytes": "^6.1.1",
+    "typescript": "^5.1.6"
+  },
+  "volta": {
+    "node": "18.17.0",
+    "yarn": "3.6.1"
+  }
+}
