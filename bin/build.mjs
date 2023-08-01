@@ -1,30 +1,34 @@
 import { build } from "esbuild";
-import fs from "fs"
-import path from "path"
+import fs from "fs";
+import path from "path";
 import prettyBytes from 'pretty-bytes';
 import { cyan, green } from 'console-log-colors';
 import logSymbols from 'log-symbols';
 
+// Build options
 /** @type {import('esbuild').BuildOptions} */
 const options = {
     entryPoints: ["./src/index.ts"],
-    minify: true,
+    minify: false,
     bundle: true,
     outfile: "./dist/index.js",
-    target: "node18",
+    target: "node20",
     platform: "node",
-    format: "cjs",
+    format: "esm",
     sourcemap: true
 };
 
+// Log success message
+const logSuccess = () => {
+    const distSize = fs.statSync(path.resolve(options.outfile)).size;
+    console.log(options.outfile, "|", cyan(prettyBytes(distSize, { space: false })));
+    console.log(logSymbols.success, green('Finished successfully!'));
+};
 
+// Build and log result
 build(options)
     .catch((err) => {
-        process.stderr.write(err.stderr);
+        console.error(err);
         process.exit(1);
     })
-    .then(() => {
-        const distSize = fs.statSync(path.resolve(options.outfile)).size
-        console.log(options.outfile, "|", cyan(prettyBytes(distSize, { space: false })))
-        console.log(logSymbols.success, green('Finished successfully!'));
-    });
+    .then(logSuccess);
