@@ -1,21 +1,23 @@
-import { build } from "esbuild";
+import { build, BuildOptions } from "esbuild";
 import fs from "fs";
 import path from "path";
 import prettyBytes from 'pretty-bytes';
 import { cyan, green } from 'console-log-colors';
 import logSymbols from 'log-symbols';
 
-// Build options
-/** @type {import('esbuild').BuildOptions} */
-const options = {
+interface Options extends BuildOptions {
+    outfile: string;
+}
+
+const options: Options = {
     entryPoints: ["./src/index.ts"],
-    minify: false,
+    minify: true,
     bundle: true,
     outfile: "./dist/index.js",
     target: "node20",
     platform: "node",
     format: "esm",
-    sourcemap: true
+    sourcemap: false
 };
 
 // Log success message
