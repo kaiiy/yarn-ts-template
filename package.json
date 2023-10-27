@@ -1,22 +1,22 @@
 {
-  "name": "yarn-v3-template",
+  "name": "yarn-ts-template",
   "scripts": {
     "ts": "node -r esbuild-register",
     "build": "rm -rf dist && yarn ts ./bin/build.ts"
   },
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@4.0.0",
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/node": "^20.5.3",
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/node": "^20.8.9",
     "console-log-colors": "^0.4.0",
-    "esbuild": "^0.19.2",
-    "esbuild-register": "^3.4.2",
-    "log-symbols": "^5.1.0",
+    "esbuild": "^0.19.5",
+    "esbuild-register": "^3.5.0",
+    "log-symbols": "^6.0.0",
     "pretty-bytes": "^6.1.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "volta": {
-    "node": "20.5.0",
-    "yarn": "3.6.1"
+    "node": "20.9.0",
+    "yarn": "4.0.0"
   }
 }
