@@ -4,10 +4,10 @@
     "ts": "node -r esbuild-register",
     "build": "rm -rf dist && yarn ts ./bin/build.ts"
   },
-  "packageManager": "yarn@4.0.0",
+  "packageManager": "yarn@4.0.1",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.3",
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.8.10",
     "console-log-colors": "^0.4.0",
     "esbuild": "^0.19.5",
     "esbuild-register": "^3.5.0",
@@ -17,6 +17,6 @@
   },
   "volta": {
     "node": "20.9.0",
-    "yarn": "4.0.0"
+    "yarn": "4.0.1"
   }
 }
